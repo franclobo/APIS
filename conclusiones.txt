@@ -1,0 +1,21 @@
+Conclusiones del Test de Automatización E2E de la API de PetStore
+
+Durante la realización de las pruebas de la API de la PetStore proporcionada en https://petstore.swagger.io/,
+se observaron varios aspectos importantes:
+
+Éxito en la mayoría de los casos de prueba: La API respondió correctamente a las solicitudes de agregar una mascota,
+consultar una mascota por su ID y actualizar una mascota a "vendida". Estos casos de prueba pasaron con éxito,
+lo que indica un funcionamiento adecuado de esas funcionalidades de la API.
+Problemas en la búsqueda por estado: El caso de prueba para consultar las mascotas modificadas por estado
+(búsqueda por estado) falló. Esto se debió a una discrepancia entre las expectativas del caso de prueba y
+la estructura real de la respuesta de la API. Se esperaba que la respuesta contuviera una sola mascota
+con un ID específico y estado "sold", pero la respuesta contenía una lista de mascotas con ese estado.
+Se corrigió el caso de prueba para reflejar correctamente la estructura de la respuesta y verificar
+si al menos una mascota con el estado "sold" está presente en la lista.
+Recomendaciones para los desarrolladores: Se sugiere a los desarrolladores de la API revisar la consistencia
+de las respuestas de la API y asegurarse de que coincidan con las expectativas de los casos de prueba.
+Además, se recomienda documentar claramente la estructura de las respuestas de la API para facilitar
+las pruebas y la integración con clientes de la API.
+
+En general, las pruebas de la API de la PetStore revelaron un funcionamiento sólido en la mayoría de
+las funcionalidades, con oportunidades de mejora identificadas en el proceso de búsqueda por estado.
